@@ -5,6 +5,8 @@ declare module "next-auth" {
     firebaseToken?: string;
     user: {
       id: string;
+      name: string;
+      image: string;
     };
   }
 }

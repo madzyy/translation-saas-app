@@ -2,6 +2,9 @@ import { authOptions } from "@/auth";
 import PricingCards from "@/components/PricingCards";
 import { getServerSession } from "next-auth";
 import React from "react";
+// type Session = {
+//   name: string;
+// }
 
 async function page() {
   const session = await getServerSession(authOptions);
@@ -12,8 +15,13 @@ async function page() {
           {/* <h2 className="text-base font-semibold leading-7 text-indigo-400">
             Pricing
           </h2> */}
+          {/*  */}
           <p className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
-            Lets handle your membership {session?.user?.name?.split(" ")?.[0]}!
+            Lets handle your membership {
+            
+            // @ts-ignore
+            session?.user?.name?.split(" ")?.[0]
+            }!
           </p>
         </div>
         <div className="relative">
